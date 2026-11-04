@@ -3,7 +3,7 @@ name: Import desktop application
 on:
   push:
     branches: [main]
-    paths: [.github/import/application.zip.b64]
+    paths: [.github/import/ready]
 
 permissions:
   contents: write
@@ -11,13 +11,15 @@ permissions:
 jobs:
   import:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Restore application files
         shell: python
         run: |
           import base64, hashlib, io, pathlib, zipfile
-          data = base64.b64decode(pathlib.Path('.github/import/application.zip.b64').read_text(), validate=True)
+          encoded = ''.join(part.read_text() for part in sorted(pathlib.Path('.github/import').glob('application.zip.b64.*')))
+          data = base64.b64decode(encoded, validate=True)
           assert hashlib.sha256(data).hexdigest() == '0e21bd8725fca9b75124f731711598a8f3ad933582b944e9bc09ecccde978fb5'
           root = pathlib.Path.cwd().resolve()
           with zipfile.ZipFile(io.BytesIO(data)) as archive:
@@ -29,7 +31,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm -- .github/import/application.zip.b64
+          git rm -- .github/import/ready .github/import/application.zip.b64.*
           git add --all
           git commit -m "Import complete Easy Download application and source"
           git push origin HEAD:main
