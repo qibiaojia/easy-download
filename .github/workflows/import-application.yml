@@ -1,0 +1,35 @@
+name: Import desktop application
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/import/application.zip.b64]
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore application files
+        shell: python
+        run: |
+          import base64, hashlib, io, pathlib, zipfile
+          data = base64.b64decode(pathlib.Path('.github/import/application.zip.b64').read_text(), validate=True)
+          assert hashlib.sha256(data).hexdigest() == '0e21bd8725fca9b75124f731711598a8f3ad933582b944e9bc09ecccde978fb5'
+          root = pathlib.Path.cwd().resolve()
+          with zipfile.ZipFile(io.BytesIO(data)) as archive:
+              for item in archive.infolist():
+                  if not (root / item.filename).resolve().is_relative_to(root):
+                      raise ValueError('Archive path escapes repository')
+              archive.extractall(root)
+      - name: Commit complete application
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -- .github/import/application.zip.b64
+          git add --all
+          git commit -m "Import complete Easy Download application and source"
+          git push origin HEAD:main
