@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>轻松下载 · 使用说明</title>
+<style>body{margin:0;background:#f7f8f2;color:#1d302b;font:17px/1.8 "Microsoft YaHei UI",sans-serif}main{max-width:790px;margin:60px auto;padding:0 30px 70px}h1{font-size:42px;line-height:1.2;margin-bottom:18px}h2{font-size:23px;margin-top:38px}p{color:#475b51}ol{padding-left:25px}li{margin:12px 0}a{color:#156f54}code{font-size:15px;background:#e8eee4;padding:2px 6px;border-radius:3px}.tag{color:#156f54;font-size:14px;letter-spacing:2px}hr{border:0;border-top:1px solid #d5dfd0;margin:32px 0}</style>
+<main><div class="tag">轻松下载 / WINDOWS</div><h1>粘贴链接，开始下载。</h1><p>一个简单的中文桌面下载器。基于 aria2，最多同时使用 8 路连接，并尽量保留服务器提供的文件名和后缀。</p>
+<ol><li>双击桌面上的 <strong>轻松下载</strong>。</li><li>复制文件下载链接，点击 <strong>粘贴</strong>。</li><li>确认“保存到”的文件夹；“文件名”留空即可，也可填入如 <code>安装包.zip</code> 的名称。</li><li>点击 <strong>开始下载</strong>，完成后点 <strong>打开文件夹</strong>。</li></ol>
+<h2>GitHub 链接怎么复制？</h2><p>进入项目的 Releases 发布页，展开 Assets 文件列表，右键具体的 <code>.zip</code>、<code>.exe</code> 等文件，选择“复制链接地址”。把这条链接粘贴进应用。项目首页、发布页本身通常是网页，不是文件直链。</p>
+<h2>能快多少？</h2><p>服务器允许分段且网络有余量时，多连接可能更快；不支持分段时会自动按服务器能力下载。小文件不一定建立 8 路连接。程序会沿用已有的系统代理或代理环境变量，不附带跨境代理、镜像站或付费加速服务，无法保证所有国外网站都变快。</p>
+<h2>后缀还会丢吗？</h2><p>自动命名优先由下载引擎读取服务器响应中的文件名，也支持常见 <code>filename</code> 查询参数作为无后缀时的补充。若服务器本身没有提供后缀，应用会提示；请在“文件名”填入自己确认的名称。无法从缺失信息中可靠猜出任意格式。</p>
+<h2>已有文件、取消和关闭</h2><p>已有文件不会被覆盖，同名文件自动加上 <code> (1)</code> 等编号。下载先放在保存目录内的隐藏临时文件夹，完成后才显示为最终文件。取消或关闭会停止引擎并清理本次未完成文件；当前版本不保留断点任务，也不会自动打开下载到的程序。磁盘或权限异常时可能残留以 <code>.轻松下载-</code> 开头的临时文件夹，退出应用后可删除。</p>
+<h2>下载失败时</h2><p>先确认链接能直接下载文件，并检查链接是否过期、磁盘空间以及系统代理。需要登录、验证码或浏览器会话的网盘链接暂不支持。若下载到的是网页，请返回原站复制真正的文件链接。安全连接问题需要修复系统证书或代理，应用保持 TLS 证书校验。</p>
+<h2>应用放在哪里？</h2><p>应用位于 <code>C:\Users\yuzihang\Documents\Codex\Apps\轻松下载</code>。桌面图标只是快捷方式，不要单独移动 EXE 或删除 engine 文件夹。如需卸载，先退出应用，再删除应用目录和桌面快捷方式即可。无需管理员权限，没有开机自启或后台常驻服务。</p>
+<hr><p>版本 1.0 · 2026-11-02<br><a href="https://github.com/aria2/aria2">aria2 官方项目</a> · <a href="THIRD-PARTY-NOTICES.txt">许可与来源</a><br>包装源代码位于应用的 source 文件夹。</p></main></html>

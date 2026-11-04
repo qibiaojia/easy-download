@@ -1,0 +1,39 @@
+{
+  "AsOf": "2026-11-02",
+  "Application": "轻松下载",
+  "Version": "1.0",
+  "AppSHA256": "1b0a384c856709376f0df06b53d48d0580f6ec11fb7f528a2d5b48ccc6bb2a34",
+  "EngineVersion": "1.37.0",
+  "EngineSHA256": "be2099c214f63a3cb4954b09a0becd6e2e34660b886d4c898d260febfe9d70c2",
+  "OfficialArchiveSHA256": "67d015301eef0b612191212d564c5bb0a14b5b9c4796b76454276a4d28d9b288",
+  "SourceArchiveSHA256": "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b",
+  "LocalTestCount": 14,
+  "CoreTestRun": "2026-11-02T13:11:39.201Z",
+  "CoreTestPayloadSHA256": "1fb92f99d5652d2a7a95245eacbcb0e8ae126e904158f1a5986189439233ecb8",
+  "GuiTestRun": "2026-11-02T13:12:27.224Z",
+  "GuiTestPayloadSHA256": "b45d2d670c9faad7108f70ecdad7bf40c632471a3da1041e996b5c2d7a811563",
+  "LocalTests": [
+    {"test": "Parallel Range download preserves byte order and content", "status": "PASS"},
+    {"test": "Redirect and UTF-8 filename* retain Chinese name and extension", "status": "PASS"},
+    {"test": "Content-Disposition overrides URL path", "status": "PASS"},
+    {"test": "Manual file name takes priority", "status": "PASS"},
+    {"test": "Server without Range completes without corruption", "status": "PASS"},
+    {"test": "Unknown length chunked response completes", "status": "PASS"},
+    {"test": "Query filename repairs extensionless download name", "status": "PASS"},
+    {"test": "Existing file is preserved and new file is numbered", "status": "PASS"},
+    {"test": "Cancellation stops download and cleans temporary data", "status": "PASS"},
+    {"test": "404 produces a readable error and no final file", "status": "PASS"},
+    {"test": "Reject non-HTTP protocols", "status": "PASS"},
+    {"test": "Reject traversal and Windows reserved names", "status": "PASS"},
+    {"test": "GUI downloads using actual input fields and buttons", "status": "PASS"},
+    {"test": "GUI cancel button stops download and clears temporary files", "status": "PASS"}
+  ],
+  "InternetVerification": {
+    "Status": "未通过",
+    "Reason": "当前工具环境下官方 aria2 Windows TLS 返回凭据/安全连接错误；从快捷方式运行的自动化实网测试也未完成。独立用户会话的联网效果及实际提速尚未确认。",
+    "Sample": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0-win-64bit-build1.zip",
+    "CertificateValidation": true
+  },
+  "DesktopShortcut": "C:\\Users\\yuzihang\\Desktop\\轻松下载.lnk",
+  "ShortcutLaunchVerified": true
+}

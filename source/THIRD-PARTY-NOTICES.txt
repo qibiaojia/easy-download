@@ -1,0 +1,19 @@
+轻松下载 1.0 — 2026-11-02
+
+本应用以独立进程调用 aria2 官方 Windows 引擎，没有包含 PCL 程序或其私有 DLL。
+界面及包装源代码随应用位于 source 目录，以 GNU GPL v2 或更新版本发布；许可全文见 LICENSE.txt。
+
+aria2 1.37.0
+Copyright (C) 2006, 2019 Tatsuhiro Tsujikawa
+License: GNU General Public License, version 2 or (at your option) any later version.
+Official project: https://github.com/aria2/aria2
+Binary release: https://github.com/aria2/aria2/releases/tag/release-1.37.0
+Original archive: aria2-1.37.0-win-64bit-build1.zip (2,475,379 bytes)
+Corresponding source: engine/source/aria2-1.37.0.tar.xz
+Upstream source: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
+引擎目录保留官方 ZIP 内的 COPYING、AUTHORS、README 和 LICENSE.OpenSSL 等文件。
+分发本应用时，必须遵守上述许可，附带许可和相应源码；仅链接源代码下载地址不等同完成所有再分发义务。
+
+调研对比：
+https://github.com/amir1376/ab-download-manager （完整桌面应用，本次未采用其代码）
+https://github.com/bezzad/Downloader （现代 .NET 库，本次未采用其代码）
