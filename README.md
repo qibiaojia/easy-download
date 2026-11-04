@@ -2,6 +2,12 @@
 
 中文 Windows 桌面下载器，基于 aria2，支持 HTTP/HTTPS 文件直链和最多 8 路连接。
 
+## 下载
+
+[**下载轻松下载 Windows 完整包（ZIP）**](https://github.com/qibiaojia/easy-download/archive/refs/heads/main.zip)
+
+完整解压后，打开 `easy-download-main` 文件夹，双击 `轻松下载.exe`。无需编译，保留旁边的 `engine` 文件夹。
+
 ## 使用
 
 1. 下载本仓库 ZIP 并完整解压。
